@@ -6,7 +6,7 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
-  Tooltip
+  Tooltip,
 } from "recharts";
 
 const Chart = ({ sparklineData }) => {
@@ -24,12 +24,18 @@ const Chart = ({ sparklineData }) => {
       }
       return null;
     })
-    .filter(data => data);
+    .filter((data) => data);
 
   return (
     <LineChart width={1100} height={300} data={formattedData}>
-      <Line type="monotone" dataKey="value" stroke="#8884d8" />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+      <Line
+        type="monotone"
+        dataKey="value"
+        stroke="#FF8C00"
+        activeDot={{ r: 8 }}
+      />
+
+      <CartesianGrid stroke="#20B2AA" strokeDasharray="5 5" />
       <XAxis dataKey="date" interval={3} />
       <YAxis />
       <Tooltip />
